@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+<title>LAB3v3</title>
+<body>
+<script src="accounting.js"></script>
+<script type="text/javascript">
+//
+// **********************************
+// Program: LAB3v3.html
+// Created by: Levi Cohen
+// Date: 2/4/25
+// Function: Convert Ounces to Pounds
+// **********************************
+// 
+//
+var ounces; 
+var pounds; 		 		
+var gold; 
+var money;
+
+
+ 
+var rate=2798.19; // 2-1-2025
+
+/* 
+The Ounce to Pounds formula: 1 ounce = 0.0625 pounds
+*/
+
+var i=0;
+while (i<=0)
+{
+ounces=prompt("Enter number of Ounces","1");
+  if (ounces==null)  /* Test for cancle */
+    {
+    i="1";
+    }
+  else
+    {
+    document.write('<br><IMG SRC="goldbars.jpg" alt="Gold Bars" WIDTH="295" HEIGHT="171">');
+    document.write("<BR>");
+    pounds= ounces * 0.0625;       /* Compute number of pounds */
+    document.write("<BR>","Ounces     : ",ounces);  
+    document.write("<BR>","Pounds     : ",pounds);
+    gold = eval(ounces)*eval(rate);
+    money = accounting.formatMoney(gold);
+    document.write("<BR>","Its all about the gold: ",money);
+   
+    }
+}
+</script>
+</body>
+</html>

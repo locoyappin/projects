@@ -1,0 +1,78 @@
+<SCRIPT LANGUAGE="JavaScript">
+    // **********************
+    // Program: LAB14V2E.htm
+    // Created by: 
+    // Date: 
+    // Function:Find Leapyear
+    // **********************
+    
+    function calcit(form){
+    
+    var v2=0;   // Year divided by 4 or 100 or 400
+    var v3=0;   // Integer value of the division
+    var v4=0;   // The reminder value
+    
+    v2=Number(form.leap.value)/4;
+    v3=parseInt(v2);
+    v4=v2-v3;
+    
+    if (eval(v4)==0 )            // Test if year is divided by 4
+      {
+      v2=Number(form.leap.value)/100;
+      v3=parseInt(v2);
+      v4=v2-v3;
+          if (eval(v4)==0 )      // Test if year is divided by 100
+          {
+          v2=Number(form.leap.value)/400;
+          v3=parseInt(v2);
+          v4=v2-v3;
+              if (eval(v4)==0 )  // Test if year is divided by 400
+              {
+              form.lresult.value = (form.leap.value +" is a Leap Year");
+              }
+              else
+              {
+              form.lresult.value = (form.leap.value +" is not a Leap Year");
+              } 
+          }
+          else
+          {
+          form.lresult.value = (form.leap.value +" is a Leap Year");
+          } 
+      }
+      else
+      {
+      form.lresult.value = (form.leap.value +" is not a Leap Year");
+      } 
+        
+    }
+    
+    function isNumberKey(evt)
+          {
+          var charCode = (evt.which) ? evt.which : event.keyCode
+          if (charCode > 31 && (charCode < 48 || charCode > 57 ))
+          return false;
+    
+           return true;
+          }
+    
+    </SCRIPT>
+    
+    <HTML>
+    <!DOCTYPE html>
+    <html lang="en">
+    <title>Leap Year</title>
+    <FORM>
+    <IMG SRC="leap-year-formula.gif" WIDTH="450" HEIGHT="340" alt="Leap Year Flowchart"></IMG><br/>
+    
+    <TABLE>
+    <TR><TD><label for="iyear">Enter Year (Example - 2014)  :</label></TD><TD><INPUT TYPE ="number" id="iyear" value=""  min="1" max="300" NAME="leap" onkeypress="return isNumberKey(event)" SIZE=4 autofocus></INPUT></TD></TR>
+    
+    <TR><TD><label for="cal"></label><INPUT TYPE ="button" id="cal" VALUE="Calculate" ONCLICK="calcit(this.form)"></INPUT></TD></TR>
+    <TR><TD><label for="res"></label><INPUT TYPE ="Reset"  id="res" VALUE="reset"></INPUT></TD></TR>
+    
+    <TR><TD><label for="oresult">Result: </label></TD><TD><INPUT TYPE="text" id="oresult" NAME="lresult" SIZE=25 readonly ></INPUT></TD></TR>
+    
+    </TABLE>
+    </FORM>
+    </HTML>

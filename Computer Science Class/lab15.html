@@ -1,0 +1,111 @@
+<SCRIPT LANGUAGE="javascript">
+    function scoreit()
+    {
+    
+    function getselectedIndex(){
+    return document.quiz.q1.selectedIndex
+    return document.quiz.q2.selectedIndex
+    return document.quiz.q3.selectedIndex
+    return document.quiz.q4.selectedIndex
+    return document.quiz.q5.selectedIndex
+    }
+    
+    var Answers=new Array(2,2,1,3,4); // The Answer Key ( 3=Question 1 Answer, 1=Question 2 Answer and so on..)var Answers=new Array(4,1,3,2,4); // The Answer Key ( 3=Question 1 Answer, 1=Question 2 Answer and so on..)var Answers=new Array(4,1,3,2,4); // The Answer Key ( 3=Question 1 Answer, 1=Question 2 Answer and so on..)var Answers=new Array(4,1,3,2,4); // The Answer Key ( 3=Question 1 Answer, 1=Question 2 Answer and so on..)var Answers=new Array(4,1,3,2,4); // The Answer Key ( 3=Question 1 Answer, 1=Question 2 Answer and so on..)var Answers=new Array(4,1,3,2,4); // The Answer Key ( 3=Question 1 Answer, 1=Question 2 Answer and so on..)var Answers=new Array(4,1,3,2,4); // The Answer Key ( 3=Question 1 Answer, 1=Question 2 Answer and so on..)var Answers=new Array(4,1,3,2,4); // The Answer Key ( 3=Question 1 Answer, 1=Question 2 Answer and so on..)var Answers=new Array(4,1,3,2,4); // The Answer Key ( 3=Question 1 Answer, 1=Question 2 Answer and so on..)var Answers=new Array(4,1,3,2,4); // The Answer Key ( 3=Question 1 Answer, 1=Question 2 Answer and so on..)var Answers=new Array(4,1,3,2,4); // The Answer Key ( 3=Question 1 Answer, 1=Question 2 Answer and so on..)var Answers=new Array(4,1,3,2,4); // The Answer Key ( 3=Question 1 Answer, 1=Question 2 Answer and so on..)var Answers=new Array(4,1,3,2,4); // The Answer Key ( 3=Question 1 Answer, 1=Question 2 Answer and so on..)var Answers=new Array(4,1,3,2,4); // The Answer Key ( 3=Question 1 Answer, 1=Question 2 Answer and so on..)
+    var UserAnswers = new Array(document.quiz.q1.selectedIndex,document.quiz.q2.selectedIndex,document.quiz.q3.selectedIndex,document.quiz.q4.selectedIndex,document.quiz.q5.selectedIndex)
+    var count0 = 0;
+    
+    
+    if (Answers[0] == UserAnswers[0])
+        {count0 = count0 + 1}
+    else
+        {count0 = count0}
+    
+    if (Answers[1] == UserAnswers[1])
+        {count1 = count0 + 1}
+    else
+        {count1 = count0}
+    
+    if (Answers[2] == UserAnswers[2])
+        {count2 = count1 + 1}
+    else
+        {count2 = count1}
+    
+    if (Answers[3] == UserAnswers[3])
+        {count3 = count2 + 1}
+    else
+        {count3 = count2}
+    
+    if (Answers[4] == UserAnswers[4])
+        {count4 = count3 + 1}
+    else
+        {count4 = count3}
+    
+    
+    alert("You got " + count4 + "/5 right.");
+    
+     }
+    </SCRIPT>
+    
+    <HTML>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <title>Quiz</title>
+    <!--
+    *************************
+    CS10 LAB15V1.HTM
+    Date: 3/16
+    By: Levi Cohen
+    Function: QUIZ Program
+    *************************
+    -->
+    
+    <FORM NAME="quiz">
+    <LABEL for="iq1">#1:  What is the largest planet in our solar system? </LABEL><SELECT NAME="q1" id="iq1">
+    <OPTION value="SELECTED">Choose One</OPTION>
+    <OPTION value="Earth">Earth</OPTION>
+    <OPTION value="Jupiter">Jupiter</OPTION>
+    <OPTION value="Saturn">Saturn</OPTION>
+    <OPTION value="Mars">Mars</OPTION>
+    </SELECT>
+    <P>
+    
+    <LABEL for="iq2">#2: Who wrote the play "Romeo and Juliet"?</LABEL><SELECT NAME="q2" id="iq2">
+    <OPTION value="SELECTED">Choose One</OPTION>
+    <OPTION value="Charles Dickens">Charles Dickens</OPTION>
+    <OPTION value="William Shakespeare">William Shakespeare</OPTION>
+    <OPTION value="Jane Austen">Jane Austen</OPTION>
+    <OPTION value="Mark Twain">Mark Twain</OPTION>
+    </SELECT>
+    <P>
+    
+    <LABEL for="iq3">#3:  Which element has the chemical symbol "O"?</LABEL><SELECT NAME="q3" id="iq3">
+    <OPTION value="SELECTED">Choose One</OPTION>
+      <OPTION value="Oxygen">Oxygen</OPTION>
+      <OPTION value="Gold">Gold</OPTION>
+    <OPTION value="Helium">Helium</OPTION>
+    </SELECT>
+    <P>
+    
+    <LABEL for="iq4">#4: What is the capital city of Japan?</LABEL><SELECT NAME="q4" id="iq4">
+    <OPTION value="SELECTED">Choose One</OPTION>
+    <OPTION value="Beijing">Beijing</OPTION>
+    <OPTION value="Seoul">Seoul</OPTION>
+    <OPTION value="Tokyo">Tokyo</OPTION>
+    </SELECT>
+    <P>
+    
+    <LABEL for="iq5">#5  Which year did the first man land on the Moon?</LABEL><SELECT NAME="q5" id="iq5">
+    <OPTION value="SELECTED">Choose One</OPTION>
+    <OPTION value="1959">1959</OPTION>
+    <OPTION value="1965">1965</OPTION>
+    <OPTION value="1973">1973</OPTION>
+    <OPTION value="1969">1969</OPTION>
+    </SELECT>
+    <P>	
+    
+    <LABEL for="myscore">Click and</LABEL><INPUT TYPE="button" id="myscore" VALUE="Your Score is" onClick="scoreit()"></INPUT></BR>
+    
+    </FORM>
+    </body>
+    </html>

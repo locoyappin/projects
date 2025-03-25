@@ -1,0 +1,75 @@
+<SCRIPT LANGUAGE="JavaScript">
+
+    // **************************************
+    // Program: LAB6.html
+    // Created by: Levi Cohen
+    // Date: 2/13/25
+    // Function: conversion of watts to amps
+    // **************************************
+    
+    /*
+    Conversion of watts to amps
+    AMPS = Watts / Voltage 
+    2.91 = 350 /120
+    */
+    
+    function calcit(form){
+if (form.watts.value==null || form.watts.value=="")
+{
+alert("Watts value must be filled out");
+return false;
+}
+if (form.voltage.value==null || form.voltage.value=="")
+{
+alert("Voltage value must be filled out");
+return false;
+}
+if (form.voltage.value=="0")
+{
+alert("Voltage value must be not zero");
+form.voltage.value="";
+return false;
+}
+form.amps.value = form.watts.value / form.voltage.value
+}
+function clearit(form)
+{
+form.watts.value=""
+form.voltage.value=""
+form.amps.value=""
+}
+function isNumberKey(evt)
+{
+var charCode = (evt.which) ? evt.which : event.keyCode
+if (charCode > 31 && (charCode < 48 || charCode > 57))
+return false;
+return true;
+}
+    
+    </SCRIPT>
+    
+    <HTML>
+    <!DOCTYPE html>
+    <html lang="en">
+    <title>LAB6</title>
+    <HEAD>
+    <BODY>
+    <FORM Name="AMPS">
+    
+    
+    <IMG SRC="ohmslaw.jpg" WIDTH="450" HEIGHT="300" alt="Ohms Law" > 
+    
+    <TABLE>
+        <TR><TD><label for="watts">Enter amount of watts :</label></TD><TD><INPUT TYPE ="text" id="watts" NAME="watts" alt="Watts" onkeypress="return isNumberKey(event)" SIZE=15></TD></TR>
+            <TR><TD><label for="voltage">Enter number of voltage:</label></TD><TD><INPUT TYPE ="text" id="voltage" NAME="voltage" alt="Voltage" onkeypress="return isNumberKey(event)" SIZE=15></TD></TR>
+    
+    <TR><TD><INPUT TYPE ="button" VALUE="Calculate" ONCLICK="calcit(this.form)"></TD></TR>
+    <TR><TD><INPUT TYPE ="button" VALUE="clear"     ONCLICK="clearit(this.form)"></TD></TR>
+    
+    
+    <TR><TD><label for ="amps">Amps:<label></label></TD><TD><INPUT TYPE="text" NAME="amps" id="amps" SIZE=15 alt="Amps" readonly></TD></TR>
+    
+    </TABLE>
+    </BODY>
+    </FORM>
+    </HTML>

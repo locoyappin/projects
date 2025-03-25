@@ -1,0 +1,87 @@
+<html>
+<HTML>
+<!DOCTYPE html>
+<html lang="en">
+<title>Payment</title>
+<body>
+<script type="text/javascript">
+//
+// ******************************
+// Program: LAB13V2.htm
+// Created by: Levi Cohen
+// Date: 3/16/24
+// Function: Compute Car Payment
+// ******************************
+// 
+var amt;			/* Loan Amount       */
+var int;			/* Interest Rate     */
+var y; 				/* Years of loan     */
+var mon;			/* Number of Months  */
+var sb;         	 /* Starting Balance  */
+var p;           	/* Payment Amount    */
+var i;           	/* Interest Amount   */
+var eb;          	/* Ending Balance    */
+
+amt=prompt("Enter Amount of Loan: Example 12000","12000")
+int=prompt("Interest Rate : Example: 6.5 = .065","0.065");
+y=prompt("Total Number of Years","4");
+
+mon=y*12;  
+int=int/12;
+
+/*
+Loan Payment = pmt=amt*int/(1-(1+int)^(-1*mon))
+*/
+pmt=amt*int/(1-Math.pow((1+int),-1*mon));
+
+
+
+
+document.write("<BR>","<strong>","Car Loan","</strong>");
+document.write("<BR>","Loan Amount:            $",amt);   
+document.write("<BR>","Interest Rate           :",int*12);   
+document.write("<BR>","Number of Months of Loan:",mon);
+var paymentamt =pmt.toFixed(2);
+document.write("<BR>","Payment Amount          :$",paymentamt);
+var repay = (pmt*mon).toFixed(2);
+document.write("<BR>","Total Repay Amount      :$",repay);
+var totintamt = ((pmt*mon)-amt).toFixed(2);
+document.write("<BR>","Total Interest Amount   :$",totintamt);  
+sb=amt;
+document.write("<BR>");
+document.write("<TABLE BORDER>");
+document.write("<BR>");
+document.write("<TR>");
+document.write("<TD ALIGN=CENTER WIDTH=75>","<strong>","Payment  ","</TD>");
+document.write("<TD ALIGN=CENTER WIDTH=75>","<strong>","Starting ","</TD>");
+document.write("<TD ALIGN=CENTER WIDTH=75>","<strong>","Interest ","</TD>");
+document.write("<TD ALIGN=CENTER WIDTH=75>","<strong>","Payment  ","</TD>");
+document.write("<TD ALIGN=CENTER WIDTH=75>","<strong>","Ending   ","</TD>");
+document.write("</TR>");
+
+document.write("<TR>");
+document.write("<TD ALIGN=CENTER>","<strong>","Number   ","</TD>");
+document.write("<TD ALIGN=CENTER>","<strong>","Balance  ","</TD>");
+document.write("<TD ALIGN=CENTER>","<strong>","Amount   ","</TD>");
+document.write("<TD ALIGN=CENTER>","<strong>","Amount   ","</TD>");
+document.write("<TD ALIGN=CENTER>","<strong>","Balance  ","</TD>");
+document.write("</TR>");
+
+document.write("<BR>","<strong>","Payment Schedule","</strong>");
+for (x=1; x<=mon;x++)          /* Loop */
+{
+i=sb*int;
+p=pmt-i;
+eb=sb-p;
+document.write("<TR>");
+document.write("<TD ALIGN=CENTER>",x,"</TD>");
+document.write("<TD ALIGN=RIGHT>",(Math.round(sb*100))/100,"</TD>");
+document.write("<TD ALIGN=RIGHT>",(Math.round(i*100))/100,"</TD>");
+document.write("<TD ALIGN=RIGHT>",(Math.round(p*100))/100,"</TD>");
+document.write("<TD ALIGN=RIGHT>",(Math.round(eb*100))/100,"</TD>");
+document.write("</TR>");
+sb=eb ;
+}
+document.write("</TABLE>");
+</script>
+</body>
